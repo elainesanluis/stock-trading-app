@@ -1,3 +1,7 @@
-<h1 class="text-10xl font-bold underline">Hello</h1>
+<h1 class="font-bold underline text-10xl">Hello</h1>
 
-<%= render template: 'devise/registrations/new' %>
+
+<%= link_to "Admin Sign-in", new_admin_session_path %> |
+<%= link_to "Admin Sign-up", new_admin_registration_path %>
+<%= link_to "Admin Sign-out", destroy_admin_session_path, method: :delete %>
+
