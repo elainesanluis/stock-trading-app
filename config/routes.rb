@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
 
-  root "home#index"
-
   devise_for :users
   
   devise_scope :admin do
@@ -16,8 +14,8 @@ Rails.application.routes.draw do
     root to: "admin#index", as: :admin_root
   end
 
+  get "admin" => "admin#index"
   
-  
-  
+  root "home#index"
 
 end
