@@ -10,8 +10,41 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <div>This is my side navigation bar</div>
+    <main class="flex">
+        <nav class="flex">
+            <div class="sticky top-0 w-64 h-screen p-4 bg-gray-600">
+                <div class="flex">
+                    <%= icon('fa-solid', 'fa-circle-solid') %>
+                    <h1 class="hidden py-2 font-bold text-md text-gray-50 md:block">Admin</h1> 
+                    <div><%= link_to "Sign out", destroy_admin_session_path, method: :delete, data: { turbo_method: :delete } %></div>
+                </div>
+                <ul class="flex flex-col text-gray-50">
+                    <li>
+                        <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                            <%= icon('fa-solid', 'gauge-high', class: "mr-2") %> <span class="hidden md:inline-block">Dashboard</span>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                            <%= icon('fa-solid', 'cart-shopping', class:'mr-2') %> <span class="hidden md:inline-block">Product</span>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                            <%= icon('fa-solid', 'list', class:'mr-2') %> <span class="hidden md:inline-block">Categories</span>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                            <%= icon('fa-solid', 'truck-fast', class:'mr-2') %> <span class="hidden md:inline-block">Orders</span>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <%= yield %>
+    </main>
+    
   </body>
 </html>
