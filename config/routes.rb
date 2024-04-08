@@ -9,17 +9,15 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  devise_scope :admin do
+    get '/admins/sign_out', to: 'admins/sessions#destroy'
+  end
+
   root "home#index"
   get '/home',          to: 'home#index'
   get '/dashboard',     to: 'dashboard#index', as: 'dashboard_index'
   get '/transactions',  to: 'transaction_records#index'
 
-  devise_scope :admin do
-    get '/admins/sign_out', to: 'admins/sessions#destroy'
-  end
-
-  authenticated :admin_user do
-    root to: "admin#index", as: :admin_root
-  end
+  get 'admins', to: 'admin#index', as: :admin
 
 end

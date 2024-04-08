@@ -28,7 +28,11 @@ gem "jbuilder"
 
 gem "devise"
 
+<<<<<<< HEAD
 gem "cancancan"
+=======
+gem "font-awesome-sass", "~> 6.5.1"
+>>>>>>> 44302e7e6453c7820c58c7541e98547344217abb
 
 # gem "tailwindcss-rails", "~> 2.3"
 
