@@ -1,11 +1,11 @@
-<h1>Hello</h1>
+<h1>Trading App</h1>
 
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
   <%= link_to "Edit registration", edit_user_registration_path %>
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
+  <%= link_to "User Sign up", new_user_registration_path %></br>
+  <%= link_to "User Sign in", new_user_session_path %>
 <% end %>
 
 <%= link_to "Admin Sign-in", new_admin_session_path %> |

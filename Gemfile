@@ -28,6 +28,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "cancancan"
+
 # gem "tailwindcss-rails", "~> 2.3"
 
 # Use Redis adapter to run Action Cable in production

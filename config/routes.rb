@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   }
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   root "home#index"
   get '/home',          to: 'home#index'
-  get '/dashboard',     to: 'dashboard#index'
+  get '/dashboard',     to: 'dashboard#index', as: 'dashboard_index'
   get '/transactions',  to: 'transaction_records#index'
 
   devise_scope :admin do

@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_04_111045) do
     t.datetime "remember_created_at"
     t.string "username"
     t.decimal "balance", precision: 15, scale: 2, default: "5000.0"
+    t.string "role", default: "buyer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
